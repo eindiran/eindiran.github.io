@@ -1,0 +1,44 @@
+# Welcome to Jekyll!
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Elliott Indiran
+email: elliott.indiran@protonmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+    My personal site. Mostly a collection of projects and a list of pointers
+    to my various accounts.
+# Subpath of your site, e.g. /blog
+baseurl: ""
+# Base hostname & protocol for your site, e.g. http://example.com
+url: "http://localhost:4000"
+# Social media stuff:
+twitter_username: sitrus19
+github_username:  eindiran
+
+# Build settings
+theme: minima
+kramdown:
+    input: GFM  # Allow GitHub-flavored Markdown
+plugins:
+  - jekyll-feed
+
+sadd:
+    sass_dir: _sass
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Specifically include the following in processing:
+include: ['_pages']
