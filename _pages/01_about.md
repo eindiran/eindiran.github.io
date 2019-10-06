@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
 
@@ -8,24 +8,25 @@ permalink: /about/
 
 <img style="float: left;" src="/assets/images/eindiran_mugshot.jpg" alt="drawing" width="220" Hspace="30" Vspace="10" title="Hiking in Portola Valley."/>
 
-I am a computational linguist and software engineer, living in San Francisco.
-I currently work on speech recognition at [Promptu Systems](http://www.promptu.com/). Additionally, I cofounded [Sitrus](https://sitrus.io), a platform for managing and analyzing quantified self data.
+Hi, my name is Elliott Indiran. I work as a software engineer and computational linguist in the San Francisco Bay Area; since 2015 I've been working for [Promptu](http://promptu.com), a small voice recognition company based out of Menlo Park.
 
-I'm a big fan of open-source software, particularly [permissive licenses](https://en.wikipedia.org/wiki/Permissive_software_licence), so many of my projects are open-source under the [MIT license](https://mit-license.org/). I have also contributed to a number of existing open-source projects, which you can find on the Projects page.
-
-
-I write most of my hobby projects in Python, but I have experience writing in a number of languages including C, Java, Javascript, Nim, Groovy, and Coconut.
-I also do a fair bit of automation using Jenkins + Python and Shell scripting.
+I'm a big fan of free and open-source software, particularly software licensed using [permissive licenses](https://en.wikipedia.org/wiki/Permissive_software_license); many of my projects are available under the [MIT license](https://mit-license.org/). I have also contributed to a few open-source projects, most notably [Coconut](https://coconut-lang.com), a functional language which compiles to Python.
 
 Prior to coming to the Bay Area in 2015, I studied linguistics at the University of Chicago (BA'2015, Linguistics). My main academic interests surround the intersection of natural language and computer science.
+
+<hr/>
+#### Sitrus
+<hr/>
+
+I am interested in the quantified self movement and discovering ways of using data to improve my life.
+In 2016, some friends and I cofounded [Sitrus](https://sitrus.io), a platform for managing and analyzing quantified self data.
+Our current project is developing a light-weight, privacy-focused app for mood tracking and journaling, which is now available for [iPhone](https://apps.apple.com/br/app/sitrus-moods/id1454172167) and [Android](https://play.google.com/store/apps/details?id=io.sitrus.moodSwipes&hl=en_US).
 
 
 <hr/>
 #### About this site
 <hr/>
 
-This site was made using [Jekyll](https://jekyllrb.com). You can find out more info about setting up a site with Jekyll, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/docs/)
-
-It uses a modified version of the [Jekyll Minima](https://github.com/jekyll/minima) theme.
+ I started this blog in 2019, as a way to collect and flesh-out my thoughts. It is made with [Jekyll](https://jekyllrb.com), using a modified version of the [Jekyll Minima](https://github.com/jekyll/minima) theme.
 
 <hr/>
