@@ -1,12 +1,10 @@
 - name: Home
   link: /
-- name: About
-  link: /about
 - name: Posts
   link: /posts
 - name: Projects
   link: /projects
-- name: Staff
-  link: /staff
 - name: Contact
   link: /contact
+- name: About
+  link: /about

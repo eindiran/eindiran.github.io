@@ -1,11 +1,14 @@
-# Welcome to Jekyll!
+# file:      _config.yml
+# filetype:  .yaml
+# author:    Elliott Indiran <elliott.indiran@protonmail.com>
 #
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Elliott Indiran
+title: unadulterated faff
+author: Elliott Indiran
 email: elliott.indiran@protonmail.com
 description: >- # this means to ignore newlines until "baseurl:"
     My personal site. Mostly a collection of projects and a list of pointers
@@ -13,9 +16,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 # Subpath of your site, e.g. /blog
 baseurl: ""
 # Base hostname & protocol for your site, e.g. http://example.com
-url: "http://localhost:4000"
+url: "https://www.eindiran.dev"
 # Social media stuff:
-twitter_username: sitrus19
 github_username:  eindiran
 
 # Build settings
