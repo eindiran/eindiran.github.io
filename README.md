@@ -14,4 +14,4 @@ For Debian-based platforms that use `apt-get` as the package manager, the steps 
 
 Then, install the necessary packages via `bundle install`, while in the top-level directory. This may take a little while.
 
-Once the Gems are installed, you can run the site via `bundle exec jekyll serve`. Don't run `jekyll` directly or you may run into Gem conflicts if you have multiple versions installed.
+Once the Gems are installed, you can run the site via `bundle exec jekyll serve`. Don't run `jekyll` directly or you may run into Gem conflicts if you have multiple versions of the same Gem installed.
