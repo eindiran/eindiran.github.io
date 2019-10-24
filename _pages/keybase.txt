@@ -1,0 +1,92 @@
+---
+permalink: /.well-known/keybase.txt
+---
+==================================================================
+https://keybase.io/eindiran
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.unadulterated-faff.com
+  * I am eindiran (https://keybase.io/eindiran) on keybase.
+  * I have a public key with fingerprint EC3A 7E7A 20CB AA55 2503  0A37 9966 7755 CB09 BB4F
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01209e52118ea2e2491cb773e63ebfe8401d8f4bf340665ce69eff009cb5c387acc20a",
+      "fingerprint": "ec3a7e7a20cbaa5525030a3799667755cb09bb4f",
+      "host": "keybase.io",
+      "key_id": "99667755cb09bb4f",
+      "kid": "0101e49c161eeccbd0329f6f29f92204d594c87b89abc1dada365a0703a7c348f4880a",
+      "uid": "46e874c90928789074b07af000f88919",
+      "username": "eindiran"
+    },
+    "merkle_root": {
+      "ctime": 1571957368,
+      "hash_meta": "55a9a627f4a86ff3b1249cc0b458f98b363a454f141528822535bc0617a6951d",
+      "seqno": 8381242
+    },
+    "revoke": {
+      "sig_ids": [
+        "650f4a0c638e8422dbe297285a36a5b4273be09f23cf2c102e49a123e7c69fc80f"
+      ]
+    },
+    "service": {
+      "hostname": "www.unadulterated-faff.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1571957369,
+  "expire_in": 157680000,
+  "prev": "5069e656e5506bf4622aa9f0010f97591d60e61de39004905de639c8ae12250c",
+  "seqno": 17,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.3
+Comment: https://keybase.io/crypto
+
+yMQMAnicbZN5bBVFHMdfy2WLYDnlUEkWi0ihzM7u7M68akQQytVaichRynN2drbd
+tH372Le9Aq2lxTSAMZWSNDRaMXJEig3hkiNgKaYCpQjlLEK0BfEiGFqbpgjReQ3E
+xPjP7Ozk9/39vr/Pb+abIf18sVFbrILFzTFH34xqblyX58vYO6VotWQ4ZpHkXy1l
+874PzzF52Atk26bkl4AMAeEIyjLmFHKoEpkZuq5wTeGGxbEKZBNbqmEpKtA0xLhG
+uGUBQJiBmIJ1yhgEVJoqWXYwk7sh1w56Ii1nCtW5TiFgBqUIQQQUQBWdEE3TdYSY
+AYhhqJYQZjnhiEKYM2iYJ9qOOBM/gT57/xP/xDeQuUqYrMmcM2aYQIHE0iyxEAiB
+aiKiMqwbmFCDySY1qaIhCnQgfDFFFS1h3Oc7ry+dqnGsq4wAArGOCdBVA+hU9Aks
+jIlMIoFh7gZpLo90ZwdN26VBqXiqlMvd7BwecB3Hi8Blnh0JkZEuE6QrGhYN0nBW
+IJd7VCgRooRqULdUijXLUgxZEGcMGCrCFsGGoilURaolqzKCGEOIFGQwoMk61QiS
+TeEjzFcFHcmPFSy0UDhweb6TzSPFw3amwBaW/OmShoCoAZimYDFECE2DQ6JDjAQH
+igwV6orBAbGgwizIZAAFTCpDhetMIxbDwJIyiiPF3Hyb9SWPzOlx/wUFBYl5QWrm
+5XjcpR43p1nUshKZkyv8hVzHc5iTI+KyPC8U9kcoeUWhPiE3Ao9TBowIxGCmUORz
+N2w7QUFNRP4XIJkq8cKQ7fKAHew71rCYCojU4fkRokDcSA1pHImdYakahJQSMTkZ
+WERHRDY1wDXZ5AoBQCUAmeJqE4YplwVdwP4lKuvCJ80UOQXHIPXyXC4VN55Y0d8X
+FesbOCA68ph8sTFxT56Y7/Nn/nZvpy2Y3pJxSv2y8ofTy+LL5+V8pU+pSxrToX+9
+MmbLueChSetfOfP7eyuO7L5wsDoZVbR+K2fU799bum3/OGsVv3Xk3T11F9PbH8Ve
+TUmoSLs2ojNl+KiOHZs+bO66Nq7h/bYsn3HsZKvVMr++rLRkT/ez8V28oRecWJf1
+1ITnLN+os3Murn7QBNfV1p9KOn5zNAympW7K2b51eHr9pB5lbEJVd+ulsvSFr8n7
+K8fPLI51OpecL0/wX/zt+4z2loV3Sl/NuokH3juwLa7m5vRab+ewt+ZceTFFad9V
+Xbx02KLQ+KPNd+e7vl/akmpqzp6Ob0uYFLgzhO7TZleHZs3aeuPqmslLH23uaW2+
+s+ZGU+oLn+Af/UO7P3ppcf+HDWNtzf/0rlHLL6sbO8aUVrUmTaz/s7qnbejy5E/p
+AyP39bayu87DxWUVI7pPLns7eUbsmYoM+cDsQfv48w3G7oN1TXRjV8rpqr9+DSlL
+ur3Ozhsf3w+d8O4XNtq3p6SVt0cN/GNiwH25KLUobpCzfe4Fe8+FwcmbP4OXetfu
+RtWpa0curKw9X1i1c/K970pqhpVEn+tp0s+XzR15MrF9zRVwPb5lwan1vQ1OXemI
+mOjcuPEr75VEL9qw4fo7b2zOqh3wE9s3/PDPX6RePtNxuHCZfCz3du/oeV39GusG
+84k1x2ccSvtg5jS3ckLtrXJ9R90gdc7gmf8ApFcEuw==
+=7605
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/eindiran
+
+==================================================================
+
