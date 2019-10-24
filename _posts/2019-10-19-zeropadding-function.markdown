@@ -5,9 +5,21 @@ date:   2019-10-19
 categories: bash scripting snip
 ---
 
-Recently I needed to rename thousands of numbered files so that the lexical sort order of the files would match the numeric sort order.
-The file names looked approximately like this: `some-name_2.xml` or `another-name_302.xml`.
-With lexical sort order, the second file `some-name_2.xml` would come _after_ the 102nd file `some-name_102.xml`; the easiest way to get lexical sort order to match numerical sort order is to zeropad the numbers.
+Recently I needed to rename thousands of numbered files so that their [lexical sort order](https://en.wikipedia.org/wiki/Lexicographical_order) would match their [numeric sort order](https://en.wikipedia.org/wiki/Collation#Numerical_and_chronological_order).
+The file names originally looked approximately like this: `some-name_2.xml` or `another-name_302.xml`.
+With lexical sort order, the second file `some-name_2.xml` would come _after_ the 102nd file `some-name_102.xml` because the first digit of 102 (`1`) comes lexicographically before the first digit of 2 (`2`).
+With numeric sort order, because the number 102 is greater than the number 2, it should come _after_ it instead.
+
+An easy way to coerce lexical sort order into matching numerical sort order is to zeropad each number: if the largest-numbered file has `n` digits, then we will pad each number with zeros until the number portion is `n` digits long.
+The number of zeroes padded onto some number `x` will be equal to `n - len(x)`, where `len` measures the length of a number in digits.
+
+For example, suppose the largest number in a filename in your directory is `7301`: we will then want each number to be padded up to 4 digits.
+Numbers in the range `0 - 9` will be padded with 3 zeros, `10 - 99` with 2 zeros, `100 - 999` with 1 zero, and `1000 - 7301` with no zeros.
+
+* The first file, `some-name_1.xml` becomes `some-name_0001.xml`
+* The 102nd file, `some-name_102.xml` becomes `some-name_0102.xml`
+* The 7301st `some-name_7301.xml` doesn't change
+
 
 I ended up using this function to generate the zeropadded filenames:
 ```bash
