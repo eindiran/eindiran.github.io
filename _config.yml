@@ -21,6 +21,7 @@ url: "https://www.unadulterated-faff.com"
 github_username:  eindiran
 
 # Build settings
+highlighter: rouge
 theme: minima
 kramdown:
     input: GFM  # Allow GitHub-flavored Markdown
