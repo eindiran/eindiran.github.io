@@ -37,6 +37,11 @@ A single conversion between `.ogg` and `.mp3` looks like this:
 ffmpeg -i filename01.ogg filename01.mp3
 ```
 
+If you need to specify a particular encoding library or bitrate, take a look at the documentation [here](https://trac.ffmpeg.org/wiki/Encode/MP3) for more information on the flags you'll want.
+
+For example, to specify 256K CBR and the `libmp3lame` library: `ffmpeg -i filename01.wav -acodec libmp3lame -b:a 256k filename01.mp3`
+
+### Batch converting files
 We can write a function that will handle generating the output name for us:
 ```bash
 ogg2mp3() {
