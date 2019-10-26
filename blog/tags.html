@@ -10,7 +10,7 @@ permalink: /tags.html
 	{% assign t = tag | first %}
 	{% assign posts = tag | last %}
 
-<a name="{{ t | downcase }}">{{ t | downcase }}</a>
+<a name="{{ t | downcase }}" href="{{ t | prepend: site.tags_url }}">{{ t | downcase }}</a>
 <ul>
 {% for post in posts %}
 	{% if post.tags contains t %}
