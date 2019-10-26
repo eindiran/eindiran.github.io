@@ -2,7 +2,8 @@
 layout: post
 title:  "Some useful keyboard shortcuts for Xfce"
 date:   2019-10-21
-categories: linux xfce article
+tags: linux xfce
+categories: articles
 ---
 
 I've been using [Xfce](https://en.wikipedia.org/wiki/Xfce) as my desktop environment since college, shortly after I switched to Linux for my daily driver.

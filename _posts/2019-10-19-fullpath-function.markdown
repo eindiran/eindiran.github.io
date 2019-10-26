@@ -2,7 +2,8 @@
 layout: post
 title:  "Getting the absolute path of a file"
 date:   2019-10-19
-categories: bash scripting snip
+tags: bash scripting
+categories: snips
 ---
 
 When you need to fetch the absolute path of a file, using `readlink` is the handiest way to do it:

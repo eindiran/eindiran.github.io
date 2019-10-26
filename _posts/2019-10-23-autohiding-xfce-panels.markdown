@@ -2,7 +2,8 @@
 layout: post
 title:  "Autohiding XFCE panels"
 date:   2019-10-23
-categories: linux xfce shell-scripting article
+tags: linux xfce scripting
+categories: articles
 ---
 
 I was browsing Hacker News today and saw [a post](https://simon.shimmerproject.org/2019/10/19/xfce-4-15-development-phase-starting/) about a new release for the Linux desktop environment XFCE.

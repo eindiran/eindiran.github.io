@@ -3,7 +3,7 @@
 #
 #          FILE: create_new_post.sh
 #
-#         USAGE: ./create_new_post.sh [-l] -t "<title>" [-c "category 1 ... category n"]
+#         USAGE: ./create_new_post.sh [-l] -t "<title>" [-c "tag 1 ... tag n"]
 #                ./create_new_post.sh -h
 #
 #   DESCRIPTION: Creates a new titled & dated markdown file with the sketch
@@ -17,7 +17,8 @@ set -Eeuo pipefail
 
 LONG_FORM=false
 POST_TITLE_RAW=""
-CATEGORY_TAGS=""
+TAGS=""
+CATEGORIES=""
 
 # Print the usage information and exit
 usage() {
@@ -30,7 +31,7 @@ while getopts ":t:c:h:l" opt; do
     case "${opt}" in
         l) LONG_FORM=true           ;;
         t) POST_TITLE_RAW=${OPTARG} ;;
-        c) CATEGORY_TAGS=${OPTARG}  ;;
+        c) TAGS=${OPTARG}  ;;
         h) usage 0                  ;;
         *) usage 1                  ;;
     esac
@@ -45,9 +46,9 @@ fi
 #  * Long form  --> "article" tag
 #  * Short form --> "snip" tag
 if [ "$LONG_FORM" = true ]; then
-    CATEGORY_TAGS="${CATEGORY_TAGS} article"
+    CATEGORIES="article"
 else
-    CATEGORY_TAGS="${CATEGORY_TAGS} snip"
+    CATEGORIES="snip"
 fi
 
 # Generate the filename
@@ -62,7 +63,8 @@ cat <<- HEADER_EOF
 layout: post
 title:  "$POST_TITLE_RAW"
 date:   $POST_DATE
-categories: $CATEGORY_TAGS
+tags: $TAGS
+categories: $CATEGORIES
 ---
 
 HEADER_EOF

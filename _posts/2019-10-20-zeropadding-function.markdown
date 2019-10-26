@@ -2,7 +2,8 @@
 layout: post
 title:  "A quick and dirty Bash zeropadding function for batch-renaming files"
 date:   2019-10-20
-categories: bash scripting snip
+tags: bash scripting
+categories: snips
 ---
 
 Recently I needed to rename thousands of numbered files so that their [lexical sort order](https://en.wikipedia.org/wiki/Lexicographical_order) would match their [numeric sort order](https://en.wikipedia.org/wiki/Collation#Numerical_and_chronological_order).

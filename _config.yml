@@ -15,6 +15,8 @@ description: >- # this means to ignore newlines until "baseurl:"
     to my various accounts.
 # Subpath of your site, e.g. /blog
 baseurl: ""
+tags_url: "/tags#"
+posts_url: "/posts"
 # Base hostname & protocol for your site, e.g. http://example.com
 url: "https://www.unadulterated-faff.com"
 # Social media stuff:

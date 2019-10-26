@@ -2,7 +2,8 @@
 layout: post
 title:  "GNOME is fighting off patent trolls"
 date:   2019-10-22
-categories: culture oss snip
+tags: culture oss
+categories: snips
 ---
 
 Currently the GNOME Foundation is fighting off patent trolls, in the first high-profile case where a patent troll has pursued an OSS project.
