@@ -27,6 +27,7 @@ kramdown:
     input: GFM  # Allow GitHub-flavored Markdown
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 sadd:
     sass_dir: _sass
