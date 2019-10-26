@@ -42,13 +42,13 @@ if [ -z "$POST_TITLE_RAW" ]; then
     usage 1
 fi
 
-# Add the category tag for short or long form posts
-#  * Long form  --> "article" tag
-#  * Short form --> "snip" tag
+# Add a category for short or long form posts
+#  * Long form  --> "articles" category
+#  * Short form --> "snips" category
 if [ "$LONG_FORM" = true ]; then
-    CATEGORIES="article"
+    CATEGORIES="articles"
 else
-    CATEGORIES="snip"
+    CATEGORIES="snips"
 fi
 
 # Generate the filename
