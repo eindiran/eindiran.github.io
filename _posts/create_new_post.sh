@@ -52,7 +52,7 @@ fi
 
 # Generate the filename
 POST_TITLE="$(echo "${POST_TITLE_RAW// /-}" | tr '[:upper:]' '[:lower:]')"
-POST_DATE="$(date -I)"
+POST_DATE="$(date "+%Y-%m-%d")"
 POST_FILENAME="${POST_DATE}-${POST_TITLE}.markdown"
 
 # Create the file
