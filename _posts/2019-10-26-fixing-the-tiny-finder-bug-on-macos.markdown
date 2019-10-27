@@ -7,7 +7,8 @@ categories: snips
 ---
 
 A few days ago, I noticed that there was a tiny, tiny little Finder window on the second desktop of my laptop, which runs macOS High Sierra.
-As cute as it is (you can see it in the image below), it started to be quite irritating to me, as I like the desktop to be empty.
+As cute as it is, it started to be quite irritating to me, as I like the desktop to be empty.
+
 ![Tiny finder window](/assets/tiny-finder.png)
 
 I had tried a few different things to fix the issue including changing the number of desktop screens, changing the background, changing the way icons appear on the desktop and restarting the machine.
