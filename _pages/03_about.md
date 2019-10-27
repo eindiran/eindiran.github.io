@@ -10,7 +10,7 @@ permalink: /about/
 
 Hi, my name is Elliott Indiran. I work as a software engineer and computational linguist in the San Francisco Bay Area; since 2015 I've been working for [Promptu](http://promptu.com), a small voice recognition company based out of Menlo Park.
 
-I'm a big fan of free and open-source software, particularly software licensed using [permissive licenses](https://en.wikipedia.org/wiki/Permissive_software_license); many of my projects are available under the [MIT license](https://mit-license.org/). I have also contributed to a few open-source projects, most notably [Coconut](https://coconut-lang.com), a functional language which compiles to Python.
+I'm a big fan of free and open-source software, particularly software licensed using [permissive licenses](https://en.wikipedia.org/wiki/Permissive_software_license); many of my projects are available under the [MIT license](https://mit-license.org/). I have also contributed to a few open-source projects, most notably [Coconut](http://coconut-lang.org/), a functional language which compiles to Python.
 
 Prior to coming to the Bay Area in 2015, I studied linguistics at the University of Chicago (BA'2015, Linguistics). My main academic interests surround the intersection of natural language and computer science.
 
