@@ -28,5 +28,6 @@ Our current project is developing a light-weight, privacy-focused app for mood t
 <hr/>
 
  I started this blog in 2019, as a way to collect and flesh-out my thoughts. It is made with [Jekyll](https://jekyllrb.com), using a modified version of the [Jekyll Minima](https://github.com/jekyll/minima) theme.
+ The [name of the blog](https://en.wikipedia.org/wiki/Glossary_of_British_terms_not_widely_used_in_the_United_States#F) comes from "faff", British slang for trivial or pointless messing around.
 
 <hr/>
