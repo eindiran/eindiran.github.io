@@ -28,6 +28,7 @@ This is an error of less than 1%, and accurate to one decimal place. Not too sha
 
 This is a fun one: it is one of the earliest surviving methods that is accurate to more to two decimal places.
 Archimedes drafted this approximation in his book [Measurement of a Circle](https://en.wikipedia.org/wiki/Measurement_of_a_Circle), by taking the area of a 96-sided regular polygon inscribed on the inside of a circle and a 96-sided regular polygon circumscribed around the outside of the circle, forming a lower and upper bound on the area of the circle itself respectively.
+This technique for estimating $$\pi$$ is extremely important, as many later techniques are variations on this theme: most obviously [Viète's formula](https://en.wikipedia.org/wiki/Vi%C3%A8te%27s_formula).
 
 Certain Egyptologists have claimed that ancient Egyptians during the [Old Kingdom](https://en.wikipedia.org/wiki/Old_Kingdom_of_Egypt) period, somewhere around 2686 - 2181 BC, used $$\frac{22}{7}$$ as an approximation of $$\pi$$, which would make this approximation older than approximation 1, but the claim has been widely met with skepticism.
 
@@ -86,11 +87,38 @@ bc -lq <<< "scale=100;sqrt(12) * (1 - 1/(3 * 3) + 1/(5 * 3^2) - 1/(7 * 3^3) + 1/
 
 It took me a long time to type that in; I can't imagine doing all of those computations by hand!
 
+### Approximation 5: $$\lim_{n \rightarrow \infty} \prod_{i=1}^n \frac{a_i}{2} = \frac2\pi$$
+
+Viète's formula
+
+French mathematician François Viète published a treatise on mathematics entitled _Variorum de rebus mathematicis responsorum, liber VIII_ in 1593 which contained a series that converges to $$\pi$$:
+
+$$\frac2\pi = \frac{\sqrt 2}2 \cdot \frac{\sqrt{2+\sqrt 2}}2 \cdot \frac{\sqrt{2+\sqrt{2+\sqrt 2}}}2 \cdots$$
+
+Viète was able to use this formula to calculate $$\pi$$ to an accuracy of 9 digits.
+
+$$\pi=\displaystyle\lim_{k\to\infty}2^k\sqrt{2-a_k},\, a_1=0,\, a_k=\sqrt{2+a_{k-1}}$$
+
+`bc` expression:
+
+```bash
+bc -lq <<< "scale=100;2^10*sqrt(2 - sqrt(2 + sqrt(2 + sqrt(2 + sqrt(2 + sqrt(2 + sqrt(2 + sqrt(2 + sqrt(2 + sqrt(2))))))))))"
+3.141591421511199973997971763740833955747562650086180797675232600350\
+2178065320807236677421696406302720
+```
+
 ### Approximation 5: $$\pi = 16 \arctan \frac{1}{5} - 4 \arctan \frac{1}{239}$$
 
 This is the approximation used by John D. Cook in his article, originally from [John Machin](https://en.wikipedia.org/wiki/John_machin).
 $$\pi = 16 \arctan \frac{1}{5} - 4 \arctan \frac{1}{239}$$
 The derviation of this formula is given [here](https://en.wikipedia.org/wiki/Machin-like_formula#Derivation), for the $$\frac{\pi}{4}$$ case.
 
+`bc` expression:
+
+```bash
+bc -lq <<< "scale=100;16*a(1/5) - 4*a(1/239)"
+3.141592653589793238462643383279502884197169399375105820974944592307\
+8164062862089986280348253421170680
+```
 
 One final aside: if you want a good laugh, read the Wikipedia article for the [Indiana Pi Bill of 1897](https://en.wikipedia.org/wiki/Indiana_Pi_Bill), a piece of legislation that would have "legislated the value of Pi" to be `3.2`.
