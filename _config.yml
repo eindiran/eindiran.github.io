@@ -25,6 +25,7 @@ github_username:  eindiran
 # Build settings
 highlighter: rouge
 theme: minima
+markdown: kramdown
 kramdown:
     input: GFM  # Allow GitHub-flavored Markdown
 plugins:
