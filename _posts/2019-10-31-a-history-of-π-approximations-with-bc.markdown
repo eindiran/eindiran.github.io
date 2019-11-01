@@ -9,6 +9,8 @@ categories: articles
 _Note: this article uses MathJax and Javascript to render LaTeX into mathematical symbols, so this page may not display everything correctly with Javascript disabled._
 
 I was reading John D. Cook's [article](https://www.johndcook.com/blog/2019/10/29/computing-pi-with-bc/) on approximating $$\pi$$ using the `bc` calculator and thought it would be fun to fill in some of the historical approximations of $$\pi$$, giving th `bc` expression for doing each approximation.
+There have been a _lot_ of approximations of $$\pi$$, so we're not going to hit all of them, but we'll get to fill in some of the ideas unlocked along the way.
+To see a chronology of $$\pi$$ approximations, see [this article on Wikipedia](https://en.wikipedia.org/wiki/Chronology_of_computation_of_%CF%80).
 
 ### Approximation 1: $$\pi \approx \frac{256}{81}$$
 
@@ -28,7 +30,9 @@ This is an error of less than 1%, and accurate to one decimal place. Not too sha
 
 This is a fun one: it is one of the earliest surviving methods that is accurate to more to two decimal places.
 Archimedes drafted this approximation in his book [Measurement of a Circle](https://en.wikipedia.org/wiki/Measurement_of_a_Circle), by taking the area of a 96-sided regular polygon inscribed on the inside of a circle and a 96-sided regular polygon circumscribed around the outside of the circle, forming a lower and upper bound on the area of the circle itself respectively.
-This technique for estimating $$\pi$$ is extremely important, as many later techniques are variations on this theme: most obviously [Viète's formula](https://en.wikipedia.org/wiki/Vi%C3%A8te%27s_formula).
+
+This technique for estimating $$\pi$$ is very important, as many later techniques are variations on this theme, including [Viète's formula](https://en.wikipedia.org/wiki/Vi%C3%A8te%27s_formula), and the work of [Ludolph van Ceulen](https://en.wikipedia.org/wiki/Ludolph_van_Ceulen).
+In principle, these other techniques use regular polygons with increasingly many sides, in order to smooth the surface until it is extremely close to inscribing/circumscribing the circle.
 
 Certain Egyptologists have claimed that ancient Egyptians during the [Old Kingdom](https://en.wikipedia.org/wiki/Old_Kingdom_of_Egypt) period, somewhere around 2686 - 2181 BC, used $$\frac{22}{7}$$ as an approximation of $$\pi$$, which would make this approximation older than approximation 1, but the claim has been widely met with skepticism.
 
@@ -63,7 +67,10 @@ We're now overshooting $$\pi$$ by a much smaller margin.
 There was a long period where not many improvements were made on existing approximations of $$\pi$$, until the Indian astronomer [Madhava of Sangamagrama](https://en.wikipedia.org/wiki/Madhava_of_Sangamagrama#The_value_of_%CF%80_(pi)) wrote _Mahajyānayana prakāra_, or "Methods for the great sines".
 In _Methods_, Madhava explores 4 different infinite series, which are now known as the Madhava-Leibniz series; the fourth can be used to compute $$\frac{\pi}{4}$$.
 
-However, the approximation here, $$\sqrt{12}\sum^\infty_{k=0} \frac{(-3)^{-k}}{2k+1}$$, is derived from an approximation for the circumfrence of a circle based on Madhava's arctangent series:
+As with Archimedes' polygon method, this is an important method in that the use of infinite series that converge to $$\pi$$ became a popular tool for $$\pi$$ approximation.
+Interestingly, [Viète's formula](https://en.wikipedia.org/wiki/Vi%C3%A8te%27s_formula) which was mentioned before as belonging to the class of technique first described by Archimedes, is _also_ an example of an infinite series and thus belongs in this class of techniques as well.
+
+The particular approximation we'll discuss here, $$\sqrt{12}\sum^\infty_{k=0} \frac{(-3)^{-k}}{2k+1}$$, is derived from an approximation of the circumfrence of a circle based on Madhava's arctangent series:
 
 $$c = \sqrt{12 d^2} - \frac{\sqrt{12 d^2}}{3 \cdot 3} + \frac{\sqrt{12 d^2}}{3^2 \cdot 5} - \frac{\sqrt{12 d^2}}{3^3 \cdot 7}+ \quad \cdots$$
 
@@ -71,7 +78,7 @@ That gives us the following way to compute $$\pi$$:
 
 $$\pi = \sqrt{12}\left( 1 - \frac{1}{3\cdot3}+\frac{1}{3^2\cdot 5} -\frac{1}{3^3\cdot 7} +\quad \cdots\right)$$
 
-Madhava computed this series to the 21st term, getting an approximation of $$\pi$$ accurate to 11 decimal places, a huge improvement over earlier methods.
+Madhava computed this series to the 21st term, getting an approximation of $$\pi$$ accurate to 10 decimal places, a huge improvement over earlier methods.
 
 `bc` expression:
 
@@ -107,7 +114,10 @@ bc -lq <<< "scale=100;2^10*sqrt(2 - sqrt(2 + sqrt(2 + sqrt(2 + sqrt(2 + sqrt(2 +
 2178065320807236677421696406302720
 ```
 
-### Approximation 5: $$\pi = 16 \arctan \frac{1}{5} - 4 \arctan \frac{1}{239}$$
+### Approximation 5: $$\arctan x = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots$$
+https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80
+
+### Approximation 6: $$\pi = 16 \arctan \frac{1}{5} - 4 \arctan \frac{1}{239}$$
 
 This is the approximation used by John D. Cook in his article, originally from [John Machin](https://en.wikipedia.org/wiki/John_machin).
 $$\pi = 16 \arctan \frac{1}{5} - 4 \arctan \frac{1}{239}$$
