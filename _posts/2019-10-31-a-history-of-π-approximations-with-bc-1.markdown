@@ -61,7 +61,7 @@ bc -lq <<< "scale=100;22/7"
 
 One final note about the upper bound, $$\frac{22}{7}$$: [3Blue1Brown](https://www.youtube.com/channel/UCsIg9WMfxjZZvwROleiVsQg) has [a video](https://www.youtube.com/watch?v=EK32jo7i5LQ) on a particular data visualization, where each number $$n$$ is plotted with polar coordinates such that $$(𝑟, \theta) = (n, n)$$. Early in the progression, there are these very beautiful spirals that you can see [here](https://math.stackexchange.com/questions/885879/meaning-of-rays-in-polar-plot-of-prime-numbers/885894).
 These spirals emerge _precisely because_ $$\frac{22}{7}$$ _is a good but not perfect approximation of_ $$\pi$$! There are $$2\pi$$ radians per rotation, meaning that each multiple of 44 is just slightly off from lining up perfectly with the origin.
-Over time, this results in soft-turn, creating a galaxy-like spiral!
+Over time, this results in a soft-turn which slowly reveals a galaxy-like spiral!
 
 ### Approximation 3: $$\pi \approx \sqrt{12}\sum^\infty_{k=0} \frac{(-3)^{-k}}{2k+1}$$
 
