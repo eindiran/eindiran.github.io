@@ -17,11 +17,11 @@ For a more general discussion of approximating $$\pi$$, [this Wikipedia article]
 
 Let's jump right in!
 
-### Approximation 1: $$\pi \approx \frac{256}{81}$$
+### Approximation 1: $$\pi \approx (\frac{16}{9})^2 = \frac{256}{81}$$
 
 This is one of the earliest known approximations of $$\pi$$, potentially beating out a Babylonian method for the earliest known approximation.
 
-The Egyptian [Rhind Mathematical Papyrus](https://en.wikipedia.org/wiki/Rhind_Mathematical_Papyrus), dated to 1600 BC, uses the area of an octagon as an approximation of the area of a circle, with the implied approximation of $$\pi$$ being $$(\frac{8}{9})^2 = \frac{256}{81}$$.
+The Egyptian [Rhind Mathematical Papyrus](https://en.wikipedia.org/wiki/Rhind_Mathematical_Papyrus), dated to 1600 BC, uses the area of an octagon as an approximation of the area of a circle, with the implied approximation of $$\pi$$ being $$(\frac{16}{9})^2 = \frac{256}{81}$$.
 
 However, [it is believed](https://www.davidhbailey.com//dhbpapers/pi-quest.pdf) that the method was in use as early ~2000 BC.
 Most attempts at approximating $$\pi$$ throughout the ancient world for the next 1000 years would just default to `3`, so the Ancient Egyptians and Babylonians were really ahead of their time!
@@ -34,7 +34,7 @@ bc -lq <<< "scale=100;256/81"
 4938271604938271604938271604938271
 ```
 
-This is an error of less than 1%, is accurate to one decimal place _and_ it set the accuracy record until 250 BC. Not too shabby!
+This result has an error of less than 1%, is accurate to one decimal place _and_ it set the accuracy record until 250 BC. Not too shabby!
 
 ### Approximation 2: $$\frac{223}{71} < \pi < \frac{22}{7}$$
 
