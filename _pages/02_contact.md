@@ -18,5 +18,3 @@ Some other places to find me on the internet:
 * [Keybase](https://keybase.io/eindiran)
 
 If you would like to see a copy of my résumé, you can find it [here](https://github.com/eindiran/resume). If you would like any clarification, don't hesitate to reach out.
-
-<hr/>

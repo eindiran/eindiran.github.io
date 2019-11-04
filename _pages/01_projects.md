@@ -29,5 +29,3 @@ This page links to a number of open-source projects I have contributed to and so
 * [The Coconut Programming Language](https://github.com/evhub/coconut) -- A functional programming language that compiles into Python; see more [here](http://coconut-lang.org/).
 * [coconut.vim](https://github.com/manicmaniac/coconut.vim) -- Adds syntax highlighting for the Coconut programming language to Vim.
 * [sourced.ml](https://github.com/src-d/ml) -- A library for applying machine learning models on top of universal abstract syntax trees; I helped expand the documentation explaining the terminology.
-
-<hr/>
