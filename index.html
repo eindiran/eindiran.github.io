@@ -10,6 +10,8 @@ permalink: /
   <time>{{ post.date | date: "%b %-d, %Y" }}</time>
   {{ post.content }}
   <br/>
-  <hr/>
+  {% if forloop.index < 5 %}
+    <hr/>
+  {% endif %}
 {% endfor %}
 </ul>
