@@ -42,6 +42,8 @@ This is a fun one: it is the earliest surviving method that is accurate to more 
 Archimedes drafted the method in his book [Measurement of a Circle](https://en.wikipedia.org/wiki/Measurement_of_a_Circle); it works by taking the area of a regular polygon inscribed on the inside of a circle and another regular polygon circumscribed around the outside of the circle, forming a lower and upper bound on the area of the circle respectively.
 As Archimedes increased the number of sides on the 2 polygons, eventually landing on the 96-sided polygons he used for the final approximation, the smoothness of their sides better approximated the curve of the circle and their areas better approximated the area of the circumscribed circle.
 
+![Regular polygons inscribing and circumscribing a circle](https://upload.wikimedia.org/wikipedia/commons/0/03/Archimedes_pi.png)
+
 This technique for estimating $$\pi$$, now known as polygon approximation to a circle, turned out to be very important, as many later techniques were variations on the same theme, including [Viète's formula](https://en.wikipedia.org/wiki/Vi%C3%A8te%27s_formula), the work of [Ludolph van Ceulen](https://en.wikipedia.org/wiki/Ludolph_van_Ceulen) and the [Snell-Huygens method](https://ijpam.eu/contents/2003-7-2/4/4.pdf).
 Future attempts at approximating $$\pi$$ that used polygon approximation to a circle generally relied on using an increasing number of sides to improve how closely the sides of the polygon resembled the curve of the circle; this ultimately culminated with [Christoph Grienberger's](https://en.wikipedia.org/wiki/Christoph_Grienberger) work in 1630, achieving 39 decimal places of accuracy.
 
@@ -81,6 +83,75 @@ $$\pi = \sqrt{12}\left( 1 - \frac{1}{3\cdot3}+\frac{1}{3^2\cdot 5} -\frac{1}{3^3
 
 Madhava computed this series to the 21st term, getting an approximation of $$\pi$$ accurate to 10 decimal places, a huge improvement over earlier methods.
 
+I've plotted below the convergence of Madhava's series to $$\pi$$ over 30 terms; as you can see, it converges very quickly.
+
+![Madhava's convergence, 30 terms](/assets/madhavas_series_convergence_30terms.png)
+
+Comparing Madhava's series with other early infinite series based approximations, you can see that it is hard to beat.
+Here is Gregory's series, which will be discussed in a later post, this time to 100 terms:
+
+![Gregory's series](/assets/gregorys_series_convergence_100terms.png)
+
+(As a quick aside, Gregory's series was also discovered by Madhava!)
+
+Here is a comparison of their rate of convergence as a graph:
+
+![Gregory's vs Madhava's series](/assets/madhavas_gregory_comparison_final.png)
+
+Because Madhava's series converges so quickly, the convergence graph isn't super helpful here, so here is a comparison of their error terms:
+
+```
+-------------------------------------------
+          MADHAVA'S SERIES
+-------------------------------------------
+Madhava's series: 10 terms evaluated
+Result: 3.141590510938080099642754
+Error:  -0.000002142651713138819889153335
+-------------------------------------------
+Madhava's series: 100 terms evaluated
+Result: 3.141592653589793238462643
+Error:  -2.514224047465875468724305e-50
+-------------------------------------------
+Madhava's series: 1000 terms evaluated
+Result: 3.141592653589793238462643
+Error:  5.527147875260444560247265e-76
+-------------------------------------------
+Madhava's series: 10000 terms evaluated
+Result: 3.141592653589793238462643
+Error:  5.527147875260444560247265e-76
+-------------------------------------------
+Madhava's series: 100000 terms evaluated
+Result: 3.141592653589793238462643
+Error:  5.527147875260444560247265e-76
+-------------------------------------------
+
+-------------------------------------------
+           GREGORY'S SERIES
+-------------------------------------------
+Gregory's series: 10 terms evaluated
+Result: 3.041839618929402211135957
+Error:  -0.09975303466039102732668612
+-------------------------------------------
+Gregory's series: 100 terms evaluated
+Result: 3.131592903558552764307414
+Error:  -0.009999750031240474155229145
+-------------------------------------------
+Gregory's series: 1000 terms evaluated
+Result: 3.140592653839792925963597
+Error:  -0.0009999997500003124990468804
+-------------------------------------------
+Gregory's series: 10000 terms evaluated
+Result: 3.141492653590043238459518
+Error:  -0.0000999999997500000031249999
+-------------------------------------------
+Gregory's series: 100000 terms evaluated
+Result: 3.141582653589793488462643
+Error:  -0.00000999999999975000000003125
+-------------------------------------------
+```
+
+By the time you've evaluated 100,000 terms, the error is down to `5.527147875260444560247265e-76`.
+
 `bc` expression:
 
 ```bash
@@ -94,3 +165,7 @@ bc -lq <<< "scale=100;sqrt(12) * (1 - 1/(3 * 3) + 1/(5 * 3^2) - 1/(7 * 3^3) + 1/
 ```
 
 It took me a long time to just to type that in; I can't imagine doing all of those computations by hand!
+
+This article has a lot in it already, so I'll save the next few approximations for the coming articles. In case this piqued your interest and you'd like to play around with the convergence graph plotting code, you can find it here:
+
+<script src="https://gist.github.com/eindiran/e110720fc16fe07ca11dae5b8c371308.js"></script>
