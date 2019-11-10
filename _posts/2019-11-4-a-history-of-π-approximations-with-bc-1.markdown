@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A history of π approximations, Part One"
-date:   2019-10-31
+date:   2019-11-04
 tags: bc math
 categories: articles
 ---
