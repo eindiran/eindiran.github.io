@@ -207,3 +207,7 @@
 .highlight {
   background-color: #f8f8f8;
 }
+img[src*='#center'] {
+  display: block;
+  margin: auto;
+}
