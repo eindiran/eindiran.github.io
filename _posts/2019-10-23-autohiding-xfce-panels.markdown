@@ -7,7 +7,7 @@ categories: articles
 ---
 
 I was browsing Hacker News today and saw [a post](https://simon.shimmerproject.org/2019/10/19/xfce-4-15-development-phase-starting/) about a new release for the Linux desktop environment XFCE.
-I have been using XFCE for [quite a while now]({% link _posts/2019-10-21-xfce-keyboard-shortcuts.markdown %}), so I am excited about some of the new features around panels, and thought I would share a script for toggling the autohide and autohide behavior properties of an XFCE panel.
+I have been using XFCE for [quite a while now]({% link _posts/2019-11-11-xfce-keyboard-shortcuts.markdown %}), so I am excited about some of the new features around panels, and thought I would share a script for toggling the autohide and autohide behavior properties of an XFCE panel.
 The script was originally based on a snippet found on the XFCE wiki on the `Tips & Tricks` page, which you can see [here](https://wiki.xfce.org/tips).
 
 Currently, I only use two panels, both of which are visible in all workspaces.
