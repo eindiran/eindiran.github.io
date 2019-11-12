@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Some useful keyboard shortcuts for Xfce"
-date:   2019-10-21
+date:   2019-11-11
 tags: linux xfce
 categories: articles
 ---
