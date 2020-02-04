@@ -101,3 +101,7 @@ $ find /usr -iname "Scrt1.o" -print
 ```
 
 Now try compiling again; the `crti.o`/`Scrt1.o` error should now be gone.
+
+##### Next up
+
+You can check out part 2 of the series [here]({{ site.baseurl }}{% link _posts/2020-02-04-fixing-rust-compilation-issues-caused-by-missing-packages-part-2.markdown %}).
