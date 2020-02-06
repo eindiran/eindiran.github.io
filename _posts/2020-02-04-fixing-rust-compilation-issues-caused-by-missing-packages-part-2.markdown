@@ -59,3 +59,7 @@ $ find /usr -iname "libclang.so" -print
 ```bash
 $ export LIBCLANG_PATH="/usr/lib/llvm-6.0/lib/libclang.so:${LIBCLANG_PATH}"
 ```
+
+#### Next up
+
+You can check out part 3 of the series [here]({{ site.baseurl }}{% link _posts/2020-02-05-fixing-rust-compilation-issues-caused-by-missing-packages-part-3.markdown %}).
