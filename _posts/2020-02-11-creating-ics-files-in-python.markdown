@@ -21,7 +21,7 @@ create_ical_event.py
 Use the icalendar package to create an iCalendar `.ics` file for a single event.
 
 
-usage: create_cal_event.py [-h] --start START --end END --name EVENT_NAME
+usage: create_ical_event.py [-h] --start START --end END --name EVENT_NAME
                            --description DESCRIPTION --organizer ORGANIZER
                            --attendees [ATTENDEES [ATTENDEES ...]]
                            [--file OUTPUT]
