@@ -18,7 +18,37 @@ But it ended up being relatively fast to throw together a script which can popul
 '''
 create_ical_event.py
 
-Use the icalendar package to create an .ics file.
+Use the icalendar package to create an iCalendar `.ics` file for a single event.
+
+
+usage: create_cal_event.py [-h] --start START --end END --name EVENT_NAME
+                           --description DESCRIPTION --organizer ORGANIZER
+                           --attendees [ATTENDEES [ATTENDEES ...]]
+                           [--file OUTPUT]
+
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --start START, -s START
+                        The start time of the meeting, given as an ISO-8601
+                        timestamp (UTC).
+  --end END, -e END     The end time of the meeting, given as an ISO-8601
+                        timestamp (UTC).
+  --name EVENT_NAME, -n EVENT_NAME
+                        The name of the event, used to populate the SUMMARY
+                        field.
+  --description DESCRIPTION, -d DESCRIPTION
+                        Description/notes for event. Used to populate the
+                        DESCRIPTION field.
+  --organizer ORGANIZER, --chair ORGANIZER, -c ORGANIZER
+                        Name and email of the event-organizer, separated by a
+                        comma.
+  --attendees [ATTENDEES [ATTENDEES ...]], -a [ATTENDEES [ATTENDEES ...]]
+                        Name and email of the attendees; given like so --
+                        "Attendee1,attendee1@email.com"
+                        "Attendee2,attendee2@email.com"
+  --file OUTPUT, --output OUTPUT, -o OUTPUT
+                        Where to write out the .ics file
 '''
 import argparse
 import icalendar
@@ -175,10 +205,14 @@ if __name__ == '__main__':
 
 ```bash
 # Using full length args:
-./create_ical_event.py --start "20200212T004500Z" --end "20200212T013000Z" --name "Test Event" --description "This is a test event" --chair "Elliott Indiran,eindiran@promptu.com" --attendees "Attendee1,attendee1@gmail.com" "Attendee2,attendee2@hotmail.com" --output "$HOME/new.ics"
+./create_ical_event.py --start "20200212T004500Z" --end "20200212T013000Z" --name "Test Event" \
+  --description "This is a test event" --chair "Elliott Indiran,eindiran@promptu.com" --attendees \
+  "Attendee1,attendee1@gmail.com" "Attendee2,attendee2@hotmail.com" --output "$HOME/new.ics"
 
 # Using short args:
-./create_ical_event.py -s "20200212T004500Z" -e "20200212T013000Z" -n "Test Event" -d "This is a test event" -c "Elliott Indiran,eindiran@promptu.com" -a "Attendee1,attendee1@gmail.com" "Attendee2,attendee2@hotmail.com" -o "$HOME/new.ics"
+./create_ical_event.py -s "20200212T004500Z" -e "20200212T013000Z" -n "Test Event" \
+  -d "This is a test event" -c "Elliott Indiran,eindiran@promptu.com" -a "Attendee1,attendee1@gmail.com" \
+  "Attendee2,attendee2@hotmail.com" -o "$HOME/new.ics"
 ```
 
 ##### More on the `iCal` format
