@@ -2,7 +2,7 @@
 layout: post
 title:  "Research on the benefits of quitting Facebook"
 date:   2020-02-13
-tags:
+tags:   culture
 categories: snips
 ---
 
