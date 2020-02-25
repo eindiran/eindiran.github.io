@@ -6,7 +6,7 @@ tags: python
 categories: articles
 ---
 
-An interesting quirk of CPython (one which has caused debugging woes for many a Python-newcomer) is that the CPython interpretter preallocates the integers `-5` through `256` inclusive in a special area of memory, often called the "integer cache" or the "small integer cache". What this means is that every time you assign a variable to an integer in that range, the variable is a reference to that integer's location in the cache. We can verify this by using [`getrefcount`](https://docs.python.org/3/library/sys.html#sys.getrefcount)^[0]^ from the `sys` package:
+An interesting quirk of CPython (one which has caused debugging woes for many a Python-newcomer) is that the CPython interpreter preallocates the integers `-5` through `256` inclusive in a special area of memory, often called the "integer cache" or the "small integer cache". What this means is that every time you assign a variable to an integer in that range, the variable is a reference to that integer's location in the cache. We can verify this by using [`getrefcount`](https://docs.python.org/3/library/sys.html#sys.getrefcount)^[0]^ from the `sys` package:
 
 ```python3
 >>> import sys
@@ -47,11 +47,11 @@ a is b          # False!
 id(a) == id(b)  # False!
 ```
 
-The integer cache is used by the CPython interpretters for both Python 2 and 3 (though I suppose we are now not supposed to acknowledge that 2 even exists), but today we'll just be using the CPython 3.6 interpretter. Take a look at [the official docs](https://docs.python.org/3/c-api/long.html#c.PyLong_FromLong) for the Python C API: it points out that the integer cache is just implemented as an array of integer objects, so in principle it is possible to change the value of each integer in the array. From the docs:
+The integer cache is used by the CPython interpreters for both Python 2 and 3 (though I suppose we are now not supposed to acknowledge that 2 even exists), but today we'll just be using the CPython 3.6 interpreter. Take a look at [the official docs](https://docs.python.org/3/c-api/long.html#c.PyLong_FromLong) for the Python C API: it points out that the integer cache is just implemented as an array of integer objects, so in principle it is possible to change the value of each integer in the array. From the docs:
 
 > The current implementation keeps an array of integer objects for all integers between -5 and 256, when you create an int in that range you actually just get back a reference to the existing object. So it should be possible to change the value of 1. I suspect the behaviour of Python in this case is undefined. :-)
 
-This made me curious: what does happen when you change the value of the integers stored in the integer cache? What kinds of abberant and unexpected behavior will we see? What if we changed _all_ of them?
+This made me curious: what does happen when you change the value of the integers stored in the integer cache? What kinds of aberrant and unexpected behavior will we see? What if we changed _all_ of them?
 
 ### Part One: Figuring out the plan of attack
 
@@ -78,11 +78,11 @@ You'll notice that they are each offset by 32 bits, which we should expect since
 
 #### Experiment 2 -- Abusing `ctypes`
 
-CPython is implemented in C under-the-hood, and provides the package `ctypes` to interact with a lot of interpretter internals from within the interpretter. Let's abuse some `ctypes` tools to see what we can do. The bits from `ctypes` that we need:
+CPython is implemented in C under-the-hood, and provides the package `ctypes` to interact with a lot of interpreter internals from within the interpreter. Let's abuse some `ctypes` tools to see what we can do. The bits from `ctypes` that we need:
 
 * [`POINTER` ](https://docs.python.org/3/library/ctypes.html#ctypes.POINTER) - a [factory function](https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)#Terminology) that takes a type and creates a pointer of that type. For example, `POINTER(c_ulong)` creates a `ctypes` unsigned long pointer.
 * [`addressof`](https://docs.python.org/3/library/ctypes.html#ctypes.addressof) - a function that returns the address of a `ctypes` object. It behaves in the same way that `id` does, but only works for `ctypes` objects.
-* [`cast`](https://docs.python.org/3/library/ctypes.html#ctypes.cast) - a function that takes a memory address and a [`ctypes` pointer type]((https://docs.python.org/3/library/ctypes.html#pointers)) and returns a pointer of the specified type to the address. Abusing this function is one of the easiest ways to get CPython to segfault.
+* [`cast`](https://docs.python.org/3/library/ctypes.html#ctypes.cast) - a function that takes a memory address and a [`ctypes` pointer type](https://docs.python.org/3/library/ctypes.html#pointers) and returns a pointer of the specified type to the address. Abusing this function is one of the easiest ways to get CPython to segfault.
 
 Our next step will be to use `cast` to print the value of a memory location as the `ctypes` `c_long` type, which is a 32-bit integer.
 
@@ -94,7 +94,7 @@ Our next step will be to use `cast` to print the value of a memory location as t
 525
 ```
 
-Okay. That is definitely not what we expected to see (well, at least it wasn't what I expected to see - maybe your mental model of the CPython interpretter is much better than mine). Let's back up for a second, and take a look at what's going on here with the `cast` call here. I constructed this example, which demonstrates that in principle using `cast` like we did above should work:
+Okay. That is definitely not what we expected to see (well, at least it wasn't what I expected to see - maybe your mental model of the CPython interpreter is much better than mine). Let's back up for a second, and take a look at what's going on here with the `cast` call here. I constructed this example, which demonstrates that in principle using `cast` like we did above should work:
 
 ```python3
 >>> from ctypes import *
@@ -121,7 +121,7 @@ So in principle we are doing the right thing with `cast`; perhaps the issue is t
 >>> end = 32
 >>> for h in range(start, end + 1):
 ...     print("{}: {}".format(h, cast(id(1) + h, POINTER(c_long))[0]))
-... 
+...
 0: 850
 1: -9223372036854775805
 2: -3350678122763649024
@@ -162,7 +162,7 @@ So there are two `1` values in there, at offset `16` and offset `24`. Let's take
 ```python3
 >>> for h in range(start, end + 1):
 ...     print("{}: {}".format(h, cast(id(2) + h, POINTER(c_long))[0]))
-... 
+...
 0: 115
 1: -9223372036854775808
 2: -3350678122763649024
@@ -198,7 +198,7 @@ So there are two `1` values in there, at offset `16` and offset `24`. Let's take
 32: 52
 >>> for h in range(start, end + 1):
 ...     print("{}: {}".format(h, cast(id(3) + h, POINTER(c_long))[0]))
-... 
+...
 0: 54
 1: -9223372036854775808
 2: -3350678122763649024
@@ -241,7 +241,7 @@ So it looks like our offset might be `24`/`0x18`. Let's test that for each value
 ...     y = cast(id(x) + 0x18, POINTER(c_long))[0]
 ...     print("x: {0} --> {1}".format(x, y))
 ...     assert abs(x) == y
-... 
+...
 x: -5 --> 5
 x: -4 --> 4
 x: -3 --> 3
