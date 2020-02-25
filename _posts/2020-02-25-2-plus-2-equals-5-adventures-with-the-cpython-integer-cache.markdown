@@ -6,7 +6,7 @@ tags: python
 categories: articles
 ---
 
-An interesting quirk of CPython (one which has caused debugging woes for many a Python-newcomer) is that the CPython interpreter preallocates the integers `-5` through `256` inclusive in a special area of memory, often called the "integer cache" or the "small integer cache". What this means is that every time you assign a variable to an integer in that range, the variable is a reference to that integer's location in the cache. We can verify this by using [`getrefcount`](https://docs.python.org/3/library/sys.html#sys.getrefcount)^[0]^ from the `sys` package:
+An interesting quirk of CPython (one which has caused debugging woes for many a Python-newcomer) is that the CPython interpreter preallocates the integers `-5` through `256` inclusive in a special area of memory, often called the "integer cache" or the "small integer cache". What this means is that every time you assign a variable to an integer in that range, the variable is a reference to that integer's location in the cache. We can verify this by using [`getrefcount`](https://docs.python.org/3/library/sys.html#sys.getrefcount) from the `sys` package:
 
 ```python3
 >>> import sys
