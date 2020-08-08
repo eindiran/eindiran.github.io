@@ -17,4 +17,4 @@ Then, install the necessary packages via `bundle install`, while in the top-leve
 
 Once the Gems are installed, you can run the site via `bundle exec jekyll serve`. Don't run `jekyll` directly or you may run into Gem conflicts if you have multiple versions of the same Gem installed.
 
-`bundle exec jekyll serve` runs using the `4000` port by default, but this can be manually specified using the `--port`. For example: `bundle exec jekyll serve --port 4001
+`bundle exec jekyll serve` runs using the `4000` port by default, but this can be manually specified using the `--port`. For example: `bundle exec jekyll serve --port 4001`
