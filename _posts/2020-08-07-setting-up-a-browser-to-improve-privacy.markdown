@@ -11,7 +11,7 @@ Something that feeds into this is that many privacy advocates encourage taking a
 
 While these are measures that will protect your privacy, and it may be worthwhile learning how to use these tools, you can significantly reduce how much you are tracked by setting up your browser differently. The goal of this post is to show how you can quickly setup a browser that limits how much you are tracked.
 
-#### Setting up your browser
+### Setting up your browser
 
 In this section, I will be describing how to do everything on a Debian-based Linux distribution, but on Windows, macOS, and *nix systems, this process should be generally the same: in big strokes, you are cleaning out all of your existing data except the stuff you explicitly save somewhere, and then installing 2 fresh browsers - Firefox (what you'll use normally) and Chrome (which you will use as your backup for when Firefox is having trouble).
 
@@ -65,7 +65,7 @@ Next, we will install all of the addons we want to help us out. Open the [Firefo
 
 Once you've installed each of the addons, visit some sites and see what breaks. You will need to start whitelisting things, which is very tedious at first but after a few days becomes very managable from that point forward. Stick with it and you'll really benefit in the long term. But, you will sometimes still hit errors, which brings me to my next topic.
 
-#### Troubleshooting errors
+### Troubleshooting errors
 
 Because lots of sites rely on Javascript, bad referer handling practices, trackers, ads, etc, using this setup will break some sites. Sometimes these will be sites you need to use, so you will need to be able to troubleshoot these problems and having a good mental model of what the errors are helps immensely.
 
@@ -79,11 +79,11 @@ These are the steps I generally take, in order:
 
 Ultimately, you will need to find what works for you, and decide if you want to use each of the addons.
 
-###### Using a secondary browser
+#### Using a secondary browser
 
 I highly recommend that once you have a setup you like, install a secondary browser (probably Chrome) which you keep totally vanilla. Only open this browser up as a last resort, when you can't use Firefox with all of the addons turned off.
 
-#### Downsides to this approach
+### Downsides to this approach
 
 One big downside is that the first week will feel pretty bad: lots of sites you use will barely work or not work at all, and it will seem like you need to constantly be tweaking your setup to get anything to work. But this feeling will pass once you've gotten used to your setup and your whitelists are well populated with the main sites you use.
 

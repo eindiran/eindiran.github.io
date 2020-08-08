@@ -31,7 +31,7 @@ while getopts ":t:c:h:l" opt; do
     case "${opt}" in
         l) LONG_FORM=true           ;;
         t) POST_TITLE_RAW=${OPTARG} ;;
-        c) TAGS=${OPTARG}  ;;
+        c) TAGS=${OPTARG}           ;;
         h) usage 0                  ;;
         *) usage 1                  ;;
     esac
@@ -58,7 +58,7 @@ POST_FILENAME="${POST_DATE}-${POST_TITLE}.markdown"
 
 # Create the file
 {
-cat <<- HEADER_EOF
+cat <<- EOF
 ---
 layout: post
 title:  "$POST_TITLE_RAW"
@@ -67,5 +67,5 @@ tags: $TAGS
 categories: $CATEGORIES
 ---
 
-HEADER_EOF
+EOF
 } > "${POST_FILENAME}"
