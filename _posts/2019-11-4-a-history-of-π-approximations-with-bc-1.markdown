@@ -6,7 +6,7 @@ tags: bc math
 categories: articles
 ---
 
-_Note: this article uses MathJax and Javascript to render LaTeX into mathematical symbols, so this page may not display correctly with Javascript disabled._
+{% include mathjax_warning.html %}
 
 I was reading John D. Cook's [article](https://www.johndcook.com/blog/2019/10/29/computing-pi-with-bc/) on approximating $$\pi$$ using the `bc` calculator and thought it would be fun to write a brief series of articles that fills in some of the historical approximations of $$\pi$$.
 Since the article gave a `bc` command for calculating $$\pi$$ using [Machin's formula](https://en.wikipedia.org/wiki/John_Machin), I'll do something similar: for each approximation covered, I'll give a `bc` expression that computes it.
