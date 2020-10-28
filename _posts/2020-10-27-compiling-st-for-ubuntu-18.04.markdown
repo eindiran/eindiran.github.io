@@ -6,12 +6,16 @@ tags: ubuntu linux ricing
 categories: snips
 ---
 
-Recently I wanted to compile [Luke Smiths' fork of `st`](https://github.com/LukeSmithxyz/st), the [Suckless _Simple Terminal_](https://st.suckless.org/).
-The compilation setup is tailored to Arch out-of-the-box, so I made some changes to the flow to get everything to work on Ubuntu 18.04.
+Recently I wanted to compile [Luke Smiths' fork of `st`](https://github.com/LukeSmithxyz/st), the [Suckless simple terminal](https://st.suckless.org/).
+The compilation setup is tailored to Arch out-of-the-box, so I made some changes to get everything to work on Ubuntu 18.04.
 
-Notably, I needed to install a number of other dependencies, and compile and install [HarfBuzz](https://github.com/harfbuzz/harfbuzz), the text shaping engine used by `st`.
-The main roadblock was that the main compilation instructions from the HarfBuzz repository use `meson`, and running `meson build && meson test -Cbuild` resulted in some `meson` lexer error that wasn't listed in the GH issues.
-HarfBuzz supports the `autoconf / automake` toolchain as well (though it is being deprecated in favor of `meson`), so I used 
+Notably, I needed to:
+1. Install a number of dependencies using `apt-get`.
+2. Compile and install [HarfBuzz](https://github.com/harfbuzz/harfbuzz), the text shaping engine used by `st`.
+
+The main roadblock was that the compilation instructions from the HarfBuzz repository use `meson` and running `meson build && meson test -Cbuild` resulted in some `meson` lexer error that wasn't listed in the GH issues.
+Given how little I know about `meson`, I wasn't ecstatic about figuring out the issue.
+Thankfully, HarfBuzz supports the `autoconf / automake` toolchain as well (though it is being deprecated in favor of `meson`), so I used that instead.
 
 ```bash
 # Clone the required repos:
