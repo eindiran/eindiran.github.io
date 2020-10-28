@@ -49,3 +49,5 @@ exclude:
 
 # Specifically include the following in processing:
 include: ['_pages']
+# Make sure timezones don't get things ignored by Jekyll
+future: true
