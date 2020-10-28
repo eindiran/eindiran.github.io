@@ -17,6 +17,8 @@ The main roadblock was that the compilation instructions from the HarfBuzz repos
 Given how little I know about `meson`, I wasn't ecstatic about figuring out the issue.
 Thankfully, HarfBuzz supports the `autoconf / automake` toolchain as well (though it is being deprecated in favor of `meson`), so I used that instead.
 
+For more info on building HarfBuzz, see [here](https://harfbuzz.github.io/building.html).
+
 ```bash
 # Clone the required repos:
 cd Workspace
